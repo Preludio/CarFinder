@@ -4,7 +4,7 @@ header( 'Content-Type: text/html;charset=utf-8' );
 
 function ejecutarSQLCommand($commando){
  
-  $mysqli = new mysqli("localhost", "root", "", "carfinder");
+  $mysqli = new mysqli("mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/", "adminkPQmyUv", "8i4L17KqlDQl", "carfinder");
 
 /* check connection */
 if ($mysqli->connect_errno) {
@@ -30,8 +30,7 @@ $mysqli->close();
 
 function getSQLResultSet($commando){
  
- 
-  $mysqli = new mysqli("localhost", "root", "", "carfinder");
+  $mysqli = new mysqli("mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/", "adminkPQmyUv", "8i4L17KqlDQl", "carfinder");
 
 /* check connection */
 if ($mysqli->connect_errno) {
